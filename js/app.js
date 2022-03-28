@@ -152,9 +152,9 @@ function drawRouletteWheel() {
 var box = document.querySelector("#click");
    
 function spin() {
-  spinAngleStart = 12;
+  spinAngleStart = 15;
   spinTime = 0;
-  spinTimeTotal = 1770;
+  spinTimeTotal = 1700;
   rotateWheel();
   box.classList.toggle("no-click");
 }
@@ -164,7 +164,7 @@ $('#click').click(function(){
 })
 
 function rotateWheel() {
-  spinTime += 10;
+  spinTime += 7;
   if(spinTime >= spinTimeTotal) {
     stopRotateWheel();
       if($('body').hasClass('one') && !$('body').hasClass('two')) {
@@ -194,7 +194,7 @@ function stopRotateWheel() {
   // clearTimeout(spinTimeout);
   // var degrees = startAngle * 180 / Math.PI + 90;
   var degrees = startAngle * 180 / Math.PI + 90;
-  var arcd = arc * 90 / Math.PI;
+  var arcd = arc * 180 / Math.PI;
   var index = Math.floor((360 - degrees % 360) / arcd);
   ans.textContent = prizes[index];
   box.classList.toggle("no-click");
@@ -208,17 +208,9 @@ $('.btn-1').click(function(){
 
 })
 
-
-function $_GET(e,t){return!!(t=t.match(new RegExp(e+"=([^&=]+)")))&&t[1]}
-var getStag = $_GET("stag", window.location.href);
-var stag = "?stag=" + getStag;
-console.log("STAG -" + stag);
-
-
-$('.btn-2').click(function(){     
-    window.location.href = 'https://www.casinokakadu.com/users/sign_up' + stag;
+$('.btn-2').click(function(){
+  window.location.href = 'https://www.casinokakadu.com/users/sign_up';
 })
-
 
 function easeOut(t, b, c, d) {
   var ts = (t/=d)*t;
@@ -228,9 +220,3 @@ function easeOut(t, b, c, d) {
 }
 
 drawRouletteWheel();
-
-
-$(':not(*), :not(.btn-1), ').on('click touchstart', function (e) {
-  e.preventDefault();
-return false;
-});
