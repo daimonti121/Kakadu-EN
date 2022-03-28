@@ -2,7 +2,7 @@ window.HUB_EVENTS={ASSET_ADDED:"ASSET_ADDED",ASSET_DELETED:"ASSET_DELETED",ASSET
 
 var colors = ["#A109FF", "#FD372A", "#FED022", "#00C3E6",
              "#A109FF", "#FD372A", "#FED022", "#00C3E6"];
-var prizes = ["TRY AGAIN", "100% UP TO 250€", "75 FS", "100 FS", "NO WIN", "50% UP TO 100€", "20 FS", "75% UP TO 100€"];
+var prizes = ["TRY AGAIN", "75% UP TO 100€", "100 FS", "75 FS", "NO WIN", "50% UP TO 100€", "20 FS", "  100% UP TO 250€"];
 
 var startAngle = 0*Math.PI/180;
 var arc = (2 * Math.PI) / colors.length;
@@ -152,7 +152,7 @@ function drawRouletteWheel() {
 var box = document.querySelector("#click");
    
 function spin() {
-  spinAngleStart = 15;
+  spinAngleStart = 15.5;
   spinTime = 0;
   spinTimeTotal = 1700;
   rotateWheel();
